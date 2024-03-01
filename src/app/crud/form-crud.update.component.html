@@ -1,0 +1,30 @@
+<form class="form-crud">
+    <div class="div-inputs-from-crud">
+        <h2>Actualizar</h2>
+        <div class="input-container">
+            <label for="userId">User Id</label>
+            <div>
+                <input class="input-form" type="number" name="user" id="user" [(ngModel)]="crud.userId">
+            </div>
+        </div>
+
+        <div class="input-container">
+            <label for="title">title</label>
+            <div>
+                <textarea class="input-form-title" type="text" name="title" id="title" [(ngModel)]="crud.title"></textarea>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <label for="body">body</label>
+            <div class="container-body">
+                <!-- <input class="input-form-body" type="text" name="body" id="body" [(ngModel)]="crud.body"> -->
+                <textarea class="input-form-body" type="text" name="body" id="body" [(ngModel)]="crud.body"></textarea>
+            </div>
+        </div>
+        <div class="btn-update">
+            <button (click)="updateCrud()" [routerLink]="['/']">Actualizar</button>
+            <button [routerLink]="['/']">Cancelar</button>
+        </div>
+    </div>
+</form>

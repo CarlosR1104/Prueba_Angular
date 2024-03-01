@@ -1,0 +1,37 @@
+<div class="heder-crud">
+    <div class="creation">
+        <div>
+            <button class="buttonCreate" [routerLink]="['/form/register']">Crear</button>
+        </div>
+        <div>
+            <label for="buscar">Buscar</label>
+            <div>
+                <input type="text" [(ngModel)]="id" (input)="searchCrud()">
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <table class="table table-dark table-striped">
+            <thead class="table-title">
+                <tr >
+                    <th>Id</th>
+                    <th>UserId</th>
+                    <th>Title</th>
+                    <th>Body</th>
+                    <th>Actualizar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let crud of cruds">
+                    <td>{{crud.id}}</td>
+                    <td>{{crud.title}}</td>
+                    <td>{{crud.userId}}</td>
+                    <td>{{crud.body}}</td>
+                    <td><button [routerLink]="['/form/update', crud.id]"> Actualizar</button></td>
+                    <td><button (click)="deleteCrud(crud.id)" [routerLink]="['/']">Eliminar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

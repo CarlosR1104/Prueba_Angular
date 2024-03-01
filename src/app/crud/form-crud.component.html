@@ -1,0 +1,29 @@
+<form class="form-crud">
+    <div class="div-inputs-from-crud">
+        <h2>Crear</h2>
+            <div class="input-container">
+                <label for="userId">User Id</label>
+                <div>
+                    <input class="input-form" type="number" name="user" id="user" [(ngModel)]="crud.userId">
+                </div>
+            </div>
+
+            <div class="input-container">
+                <label for="title">title</label>
+                <div>
+                    <input class="input-form" type="text" name="title" id="title" [(ngModel)]="crud.title">
+                </div>
+            </div>
+
+            <div class="input-container">
+                <label for="body">body</label>
+                <div>
+                    <input class="input-form-body" type="text" name="body" id="body" [(ngModel)]="crud.body">
+                </div>
+            </div>
+            <div class="btn-update">
+                <button (click)="saveCrud()" [routerLink]="['/']">Crear</button>
+                <button [routerLink]="['/']">Cancelar</button>
+            </div>
+    </div>
+</form>
